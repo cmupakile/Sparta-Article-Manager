@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
+  # default home page
+  def home
   end
 end
