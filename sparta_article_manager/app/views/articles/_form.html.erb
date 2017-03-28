@@ -1,0 +1,28 @@
+<%= simple_form @article do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@article.errors.count, "error")} stopped this post from being saved:" %>
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="form-here">
+      <%= f.input :title, class: "form-control" %>
+    </div>
+
+    <div class="form-here">
+      <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor =>{:toolbar => 'FULL'}}, class: "form-control" %>
+    </div>
+
+    <div class="form-here">
+      <%= f.button :submit %>
+    </div>
+    <% end %>

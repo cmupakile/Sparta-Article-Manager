@@ -4,8 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+#
+gem 'ckeditor', '~> 4.1'
+# form gem that works with bootstrap // will tailor to skeleton-rails
 gem 'simple_form', '~> 3.2'
 # adding the skeleton-rails css framework
 gem 'skeleton-rails', '~> 1.2'
