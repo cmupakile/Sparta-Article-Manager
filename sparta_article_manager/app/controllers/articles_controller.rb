@@ -57,7 +57,7 @@ private
   end
 
   def find_article
-    @article = Post.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
 end
