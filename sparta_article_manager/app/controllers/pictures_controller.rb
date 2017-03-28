@@ -1,15 +1,15 @@
-class PictureController < ApplicationController
+class PicturesController < ApplicationController
   def index
     # load all the article pictures
     @pictures = Picture.all
 
-    rener:'pictures/index'
+    render :'picture/index'
   end
 
   def show
     # show all the article pictures
     @picture = Picture.find params[:id]
-    render:'pictures/index'
+    render :'picture/index'
   end
 
   def create

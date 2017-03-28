@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'article/index'
-
-  get 'picture/index'
-
-  get 'welcome/index'
+  
 
   resources :pictures do
     resources :articles, only: [:create]
