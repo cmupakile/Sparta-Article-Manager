@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   mount Ckeditor::Engine => '/ckeditor'
 # set this as the root.
 # if root is selected in the browser. display index page
