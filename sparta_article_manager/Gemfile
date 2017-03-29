@@ -4,7 +4,10 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-#
+
+# authentication solution for Rails
+gem 'devise'
+#give editor a few extra features
 gem 'ckeditor', '~> 4.1'
 # form gem that works with bootstrap // will tailor to skeleton-rails
 gem 'simple_form', '~> 3.2'
