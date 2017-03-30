@@ -29,10 +29,10 @@ def edit
 end
 
 # Update the article with new information
-def Update
+def update
   if @article.update_attributes(article_params)
     flash[:notice] = "Article Updated."
-    redirect_to article_path(@articles)
+    redirect_to articles_path(@articles)
   else
     flash[:alert] = "Error Updating the Article."
     render :edit
@@ -44,7 +44,7 @@ def show
 end
 
 # Destroy action. Delete the article permanently from the db
-def Destroy
+def destroy
   if @article.Destroyflash[:notice] = "Article Deleted."
     redirect_to article_path
   else
