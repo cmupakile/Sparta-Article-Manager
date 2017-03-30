@@ -45,10 +45,13 @@ end
 
 # Destroy action. Delete the article permanently from the db
 def destroy
-  if @article.Destroyflash[:notice] = "Article Deleted."
-    redirect_to article_path
+  @article = Article.find(params[:id])
+  if @article.destroy
+    #  @article = Article.find(paramss[:id])
+     flash[:notice] = "Article Deleted."
+     redirect_to articles_path
   else
-    flash[:alert] = "Error Deleting Article."
+     flash[:alert] = "Error Deleting Article."
   end
 end
 
