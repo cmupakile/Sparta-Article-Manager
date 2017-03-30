@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+before_action :authenticate_admin!, except: [:index, :show]
 before_action :find_article, only: [:edit, :update, :show, :delete]
 
 # display all the posts (articles)
@@ -13,8 +14,8 @@ end
 
 # Save the article (save the post)
 def create
-  @article = Article.new
-  if @article.save(article_params)
+  @article = Article.new(article_params)
+  if @article.save
     flash[:notice] = "Successfully Created Article Post."
     redirect_to article_path(@article)
   else
